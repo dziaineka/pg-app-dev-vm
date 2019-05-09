@@ -9,10 +9,10 @@ First install [Vagrant] and [Virtual Box].
 Then, run the following to create a new PostgreSQL app dev virtual machine:
 
 	# Clone it locally:
-    $ git clone https://github.com/jackdb/pg-app-dev-vm myapp
+    $ git clone https://github.com/jackdb/pg-app-dev-vm wgforgedb
 
     # Enter the cloned directory:
-    $ cd myapp
+    $ cd wgforgedb
 
     # Delete the old .git and README:
     $ rm -rf README.md .git
@@ -40,8 +40,8 @@ Once it has started up it will print out how to access the database on the virtu
     Your PostgreSQL database has been setup and can be accessed on your local machine on the forwarded port (default: 15432)
       Host: localhost
       Port: 15432
-      Database: myapp
-      Username: myapp
+      Database: wgforgedb
+      Username: wgforgedb
       Password: dbpass
 
     Admin access to postgres user via VM:
@@ -51,13 +51,13 @@ Once it has started up it will print out how to access the database on the virtu
     psql access to app database user via VM:
       vagrant ssh
       sudo su - postgres
-      PGUSER=myapp PGPASSWORD=dbpass psql -h localhost myapp
+      PGUSER=wgforgedb PGPASSWORD=dbpass psql -h localhost wgforgedb
 
     Env variable for application development:
-      DATABASE_URL=postgresql://myapp:dbpass@localhost:15432/myapp
+      DATABASE_URL=postgresql://wgforgedb:dbpass@localhost:15432/wgforgedb
 
     Local command to access the database via psql:
-      PGUSER=myapp PGPASSWORD=dbpass psql -h localhost -p 15432 myapp
+      PGUSER=wgforgedb PGPASSWORD=dbpass psql -h localhost -p 15432 wgforgedb
 
 ### Why use the shell provisioner?
 
